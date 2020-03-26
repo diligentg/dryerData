@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sc.dryer.dao.FixMapper" >
+  <resultMap id="BaseResultMap" type="com.sc.dryer.pojo.Fix" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="dormi" property="dormi" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="VARCHAR" />
+    <result column="uName" property="uname" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="msg" property="msg" jdbcType="VARCHAR" />
+    <result column="pId" property="pid" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from fix
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sc.dryer.pojo.Fix" >
+    insert into fix (id, dormi, num, 
+      uName, type, msg, pId
+      )
+    values (#{id,jdbcType=VARCHAR}, #{dormi,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR}, 
+      #{uname,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{msg,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sc.dryer.pojo.Fix" >
+    update fix
+    set dormi = #{dormi,jdbcType=VARCHAR},
+      num = #{num,jdbcType=VARCHAR},
+      uName = #{uname,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      msg = #{msg,jdbcType=VARCHAR},
+      pId = #{pid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select id, dormi, num, uName, type, msg, pId
+    from fix
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, dormi, num, uName, type, msg, pId
+    from fix
+  </select>
+</mapper>

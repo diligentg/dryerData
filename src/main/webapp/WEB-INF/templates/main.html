@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>烘干机APP管理后台</title>
+  <link rel="stylesheet" type="text/css" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}" media="all">
+  <style rel="stylesheet" type="text/css">
+          #test1{
+            z-index: 100;
+            position: relative;
+          }
+  </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">烘干机管理系统</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="../img/rq.jpg" class="layui-nav-img">
+          贤心
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">退了</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;" >个人主页</a>
+          <dl class="layui-nav-child">
+            <dd><a href="http://localhost:8080/dryer/users/index" target="ifra">个人信息</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;" >我的账单</a>
+          <dl class="layui-nav-child">
+            <dd><a href="http://localhost:8080/dryer/costs/index" target="ifra">消费记录</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;" >我的钱包</a>
+          <dl class="layui-nav-child">
+            <dd><a href="http://localhost:8080/dryer/balances/index" target="ifra" >余额</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;" >设备报修</a>
+          <dl class="layui-nav-child">
+            <dd><a href="http://localhost:8080/dryer/fixs/index" target="ifra">报修列表</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="layui-body">
+  	<iframe   name="ifra"    width="100%" height="100%"  src="http://localhost:8080/dryer/users/i" th:src="@{/users/i}" ></iframe>
+  	<!--<iframe src="http://localhost:8080/dryer/users/index"  name="ifra"    width="100%" height="100%" ></iframe>-->
+
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;" >内容主体区域
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    <!--轮播-->
+
+    © layui.com - 底部固定区域
+  </div>
+</div>
+<script type="text/javascript" src="../layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script>
+//JavaScript代码区域
+layui.use(['carousel'], function(){
+  var carousel = layui.carousel;
+
+    // 轮播
+    carousel.render({
+        elem: '#test1'
+        ,full:false
+        ,arrow: 'always' //不显示箭头
+        ,anim: 'fade' //切换动画方式
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="cn" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="utf-8">
+<title>烘干机APP登陆</title>
+<link  rel="stylesheet" href="../css/base.css" th:href="@{/css/base.css}" type="text/css">
+<link  rel="stylesheet" href="../css/login.css" th:href="@{/css/login.css}" type="text/css">
+</head>
+<body>
+<div class="login">
+    <!--<form action="" method="get" id="form">-->
+        <div class="logo"></div>
+        <div class="login_form">
+            <div class="user">
+                <input placeholder="用户" class="text_value" value="" name="username" type="text" id="username">
+                <input placeholder="密码" class="text_value" value="" name="password" type="password" id="password">
+            </div>
+            <button class="button" id="submit" type="button" onclick="login()">登录</button>
+        </div>
+
+        <div id="tip"></div>
+        <div class="foot">
+            <a th:href="@{/templates/register.html}">
+                Copyright &copy; 2019.注册
+            </a>
+        </div>
+    <!--</form>-->
+</div>
+</body>
+<script th:src="@{/layui/layui.js}" src="../layui/layui.js"></script>
+<script>
+
+    //登录
+    function login(){
+        layui.use(['jquery', 'layer'],function(){
+            var layer = layui.layer;
+            var $ = layui.jquery;
+            username = $("#username").val();
+            password = $("#password").val();
+
+            $.ajax({
+                url:"http://localhost:8080/dryer/home/login",
+                data:{'username':username,'password':password},
+                type:"post",
+                success:function(data){
+                    location.href="http://localhost:8080/dryer/home/main"
+                },
+                error:function(data){
+                    layer.msg('错误：  '+data.status+data.message, {
+                        time: 2000 ,//2秒自动关闭
+                    });
+                }
+            });
+        });
+    };
+
+
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sc.dryer.dao.CostMapper" >
+  <resultMap id="BaseResultMap" type="com.sc.dryer.pojo.Cost" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="cost" property="cost" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="pay" property="pay" jdbcType="VARCHAR" />
+    <result column="uName" property="uname" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from cost
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sc.dryer.pojo.Cost" >
+    insert into cost (id, useType, consumeTime,
+      location, pay, uName,consumestatus,way
+      )
+    values (#{id,jdbcType=VARCHAR}, #{usetype,jdbcType=VARCHAR}, #{consumetime,jdbcType=VARCHAR},
+      #{location,jdbcType=VARCHAR}, #{pay,jdbcType=VARCHAR}, #{uname,jdbcType=VARCHAR},
+      #{consumestatus,jdbcType=VARCHAR},#{way,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sc.dryer.pojo.Cost" >
+    update cost
+    set cost = #{cost,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      pay = #{pay,jdbcType=VARCHAR},
+      uName = #{uname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select id, cost, time, location, pay, uName
+    from cost
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <!--<select id="selectAll" resultMap="BaseResultMap" >-->
+    <!--select id, cost, time, location, pay, uName-->
+    <!--from cost-->
+  <!--</select>-->
+  <select id="selectAll" parameterType="integer" resultMap="BaseResultMap">
+    select * from cost limit #{page},#{limit}
+  </select>
+  <!--查询数据总量-->
+  <select id="selectCount" resultType="integer">
+    select count(*) FROM cost
+  </select>
+
+  <select id="selectByLike"  resultMap="BaseResultMap">
+    SELECT *
+    FROM cost
+    WHERE time
+    LIKE concat("%",#{time},"%")
+    limit #{page},#{limit}
+  </select>
+</mapper>

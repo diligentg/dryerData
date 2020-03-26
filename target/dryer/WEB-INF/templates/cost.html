@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
+</head>
+<body>
+<div class="layui-anim" data-anim="layui-anim-scaleSpring">
+    <div class="demoTable">
+        搜索日期：<div class="layui-inline">
+        <input class="layui-input" name="id" id="test2" autocomplete="off">
+    </div>
+        <button class="layui-btn" data-type="reload" id="btn">搜索</button>
+    </div>
+</div>
+
+<table class="layui-hide" id="demo" lay-filter="test"></table>
+
+<script type="text/html" id="bar">
+    <!--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>-->
+    <!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+    <!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
+</script>
+
+<script type="text/javascript" src="layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" src="../js/cost.js" th:src="@{/js/cost.js}"></script>
+
+</body>
+
+</html>

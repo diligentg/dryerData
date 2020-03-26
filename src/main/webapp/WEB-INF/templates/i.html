@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>i</title>
+</head>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
+<body>
+<div class="layui-carousel" id="test1">
+    <div carousel-item>
+        <div><img src="../img/gong.jpg" style="height: 100%;width: 100%;object-fit: contain"></div>
+        <div><img src="../img/rq.jpg" style="height: 100%;width: 100%;object-fit: contain"></div>
+        <div><img src="../img/gong.jpg" style="height: 100%;width: 100%;object-fit: contain"></div>
+        <div><img src="../img/ry.jpg" style="height: 100%;width: 100%;object-fit: contain"></div>
+        <div><img src="../img/re.jpg" style="height: 100%;width: 100%;object-fit: contain"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script>
+    //JavaScript代码区域
+    layui.use(['carousel'], function(){
+        var carousel = layui.carousel;
+
+        // 轮播
+        carousel.render({
+            elem: '#test1'
+            ,full:true
+            ,arrow: 'always' //不显示箭头
+            ,anim: 'fade' //切换动画方式
+            ,autoplay:true
+        });
+    });
+</script>
+</body>
+</html>

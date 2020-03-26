@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cn" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <title>抖音管理系统登录登陆</title>
+    <link rel="stylesheet" href="../css/base.css" th:href="@{/layui/css/base.css}" type="text/css">
+    <link rel="stylesheet" href="../css/login.css" th:href="@{/layui/css/login.css}" type="text/css">
+</head>
+<body>
+<div class="login">
+    <!--<form action="" method="get" id="form">-->
+    <div class="logo"></div>
+    <div class="login_form">
+        <div class="user">
+            <input placeholder="用户" class="text_value" value="" name="username" type="text" id="username">
+        </div>
+        <div class="user">
+            <input placeholder="密码" class="text_value" value="" name="password" type="password" id="password">
+            <input placeholder="确认密码" class="text_value" value="" name="password2" type="password" id="password2">
+        </div>
+        <button class="button" id="submit" type="button" onclick="login()">登录</button>
+    </div>
+
+    <div id="tip"></div>
+    <div class="foot" style="margin-top: 300px;">
+        <a th:href="@{/templates/login.html}">
+            Copyright &copy; 2019.登录
+        </a>
+    </div>
+
+    <!--</form>-->
+</div>
+</body>
+<script th:src="@{/layui/layui.js}" src="../layui/layui.js"></script>
+<script>
+
+    //登录
+    function login(){
+        url = "http://localhost:8081/trill_war_exploded/users/register"
+        layui.use(['jquery', 'layer'],function(){
+            var layer = layui.layer;
+            var $ = layui.jquery;
+
+            username = $("#username").val();
+            nickname = $("#nickname").val();
+            password = $("#password").val();
+            console.log(username+password+nickname);
+
+            $.ajax({
+                url:url,
+                data:{'username':username,'password':password,"nickname":nickname},
+                type:"post",
+                success:function(data){
+                    layer.msg('登录：  '+data.status+data.message, {
+                        time: 5000 ,//2秒自动关闭
+                        btn: ['确定', '取消'],
+                        yes: function(index){
+                            if (data.status=='200'){
+                                layer.close(index);
+                                location.href = "http://localhost:8081/trill_war_exploded/home/login";
+                            }
+                        }
+                    });
+                    console.log(data.status,data.message);
+                },
+                error:function(data){
+                    layer.msg('错误：  '+data.status+data.message, {
+                        time: 2000 ,//2秒自动关闭
+                    });
+                }
+            });
+        });
+    };
+
+
+</script>
+
+</html>
