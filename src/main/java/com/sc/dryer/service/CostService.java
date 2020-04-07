@@ -7,7 +7,7 @@ import java.util.List;
 public interface CostService {
 
 
-    List<Cost> selectAll(Integer page, Integer limit);
+    List<Cost> selectAll();
 
     String del(String[] id);
 

@@ -93,9 +93,10 @@ public class UserController {
     @RequestMapping("/update")
     @ResponseBody
     public Result update(String value,String id,String field){
-
+//    public Result update(Users user,String id,String[] field){
         Result result = new Result();
         try {
+//            userService.updateById(user,id,field);
             userService.updateById(value,id,field);
             return result;
         }catch (Exception e){
@@ -113,6 +114,5 @@ public class UserController {
         result.setItem(users);
         result.setTotal(users.size());
         return result;
-
     }
 }

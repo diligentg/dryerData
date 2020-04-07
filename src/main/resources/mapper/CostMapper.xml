@@ -41,7 +41,7 @@
     <!--from cost-->
   <!--</select>-->
   <select id="selectAll" parameterType="integer" resultMap="BaseResultMap">
-    select * from cost limit #{page},#{limit}
+    select * from cost
   </select>
   <!--查询数据总量-->
   <select id="selectCount" resultType="integer">

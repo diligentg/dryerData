@@ -45,7 +45,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 field: 'id',
                 title: 'ID',
             }, {
-                field: 'uname',
+                field: 'fname',
                 title: '姓名',
             },{
                 field: 'dormi',
@@ -57,15 +57,15 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 field: 'type',
                 title: '类型',
             }, {
-                field: 'msg',
+                field: 'fixmsg',
                 title: '故障描述',
             }, {
-                field: 'pid',
+                field: 'fiximg',
                 title: '图片',
                 templet: function (dt) {
-                    var s = dt.pid;
+                    var s = dt.fiximg;
                     var img = "<img src='../" + s +
-                        "' style='height: 150px;width: 150px;'/>"
+                        "' style='height: 150px;width: 100px;'/>"
                     return img;
                 }
             }, {

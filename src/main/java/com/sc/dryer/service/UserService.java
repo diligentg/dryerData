@@ -25,6 +25,7 @@ public interface UserService {
     //统计数据库中的数据条数
     Integer selectCount();
     //修改某个字段的值
+//    void updateById(Users user, String id,String[] field);
     void updateById(String value, String id, String field);
 
     List<Users> selectByLike(String name,Integer page,Integer limit);

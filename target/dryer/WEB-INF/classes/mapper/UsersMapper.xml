@@ -52,6 +52,9 @@
   <update id="updateById" parameterType="string">
     UPDATE users
     SET
+    <if test="field=='pid'">
+      pId = #{value}
+    </if>
     <if test="field=='name'">
       name = #{value}
     </if>
@@ -67,7 +70,7 @@
     <if test="field=='school'">
       school=#{value}
     </if>
-    <if test="field=='classMsg'">
+    <if test="field=='classmsg'">
       classmsg=#{value}
     </if>
     where

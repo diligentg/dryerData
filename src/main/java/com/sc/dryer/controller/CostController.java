@@ -23,8 +23,8 @@ public class CostController {
     private CostService costService;
     @RequestMapping("/selectAll")
     @ResponseBody
-    public Result selectAll(Integer page,Integer limit){
-        List<Cost> costs = costService.selectAll(page,limit);
+    public Result selectAll(){
+        List<Cost> costs = costService.selectAll();
         Result result = new Result();
         if (costs!=null){
             Integer total=costService.selectCount();

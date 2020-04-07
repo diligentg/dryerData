@@ -1,8 +1,11 @@
 package com.sc.dryer.dao;
 
 import com.sc.dryer.pojo.Balance;
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@Component
 public interface BalanceMapper {
     int deleteByPrimaryKey(String id);
 
@@ -13,4 +16,6 @@ public interface BalanceMapper {
     List<Balance> selectAll();
 
     int updateByPrimaryKey(Balance record);
+
+    void updateById(@Param("value")String value, @Param("id") String id, @Param("field") String field);
 }

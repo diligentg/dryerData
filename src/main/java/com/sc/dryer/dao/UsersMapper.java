@@ -21,6 +21,7 @@ public interface UsersMapper {
     Integer selectCount();
     //传多个参数用@Param("value")
     void updateById(@Param("value")String value,@Param("id") String id,@Param("field") String field);
+//    void updateById(@Param("user")Users value,@Param("id") String id,@Param("field") String[] field);
 
     List<Users> selectByLike(@Param("name")String name,@Param("page")Integer page,@Param("limit")Integer limit);
 

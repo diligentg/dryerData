@@ -9,13 +9,13 @@ public class Fix implements Serializable {
 
     private String num;
 
-    private String uname;
+    private String fname;
 
     private String type;
 
-    private String msg;
+    private String fixmsg;
 
-    private String pid;
+    private String fiximg;
 
     private static final long serialVersionUID = 1L;
 
@@ -43,14 +43,6 @@ public class Fix implements Serializable {
         this.num = num == null ? null : num.trim();
     }
 
-    public String getUname() {
-        return uname;
-    }
-
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
-    }
-
     public String getType() {
         return type;
     }
@@ -59,19 +51,30 @@ public class Fix implements Serializable {
         this.type = type == null ? null : type.trim();
     }
 
-    public String getMsg() {
-        return msg;
+
+
+
+    public String getFname() {
+        return fname;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg == null ? null : msg.trim();
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
-    public String getPid() {
-        return pid;
+    public String getFiximg() {
+        return fiximg;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid == null ? null : pid.trim();
+    public void setFiximg(String fiximg) {
+        this.fiximg = fiximg;
+    }
+
+    public String getFixmsg() {
+        return fixmsg;
+    }
+
+    public void setFixmsg(String fixmsg) {
+        this.fixmsg = fixmsg;
     }
 }

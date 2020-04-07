@@ -73,6 +73,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void updateById(String value, String id, String field) {
+//    public void updateById(Users user, String id,String[] field) {
+//        usersMapper.updateById(user,id,field);
         usersMapper.updateById(value,id,field);
     }
 

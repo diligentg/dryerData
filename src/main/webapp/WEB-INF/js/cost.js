@@ -44,14 +44,17 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 }, {
                 field: 'id',
                 title: 'ID',
-            }, {
-                field: 'uname',
-                title: '姓名',
             },{
-                field: 'cost',
+                field: 'usetype',
                 title: '消费类型',
+            },{
+                field: 'consumestatus',
+                title: '消费状态',
             }, {
-                field: 'time',
+                field: 'way',
+                title: '支付方式',
+            }, {
+                field: 'consumetime',
                 title: '消费时间',
             }, {
                 field: 'location',

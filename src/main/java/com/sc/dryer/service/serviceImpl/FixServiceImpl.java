@@ -32,9 +32,9 @@ public class FixServiceImpl implements FixService{
     public void add(Fix fix) {
         String s = UUID.randomUUID().toString();
         fix.setId(s);
-        String pid = fix.getPid();
-        String p="img/"+pid;
-        fix.setPid(p);
+        String fiximg = fix.getFiximg();
+        String p="img/"+fiximg;
+        fix.setFiximg(p);
         fixMapper.insert(fix);
     }
 

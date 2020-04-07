@@ -13,7 +13,7 @@ public interface CostMapper {
 
     Cost selectByPrimaryKey(String id);
 
-    List<Cost> selectAll(@Param("page") Integer page,@Param("limit") Integer limit);
+    List<Cost> selectAll();
 
     int updateByPrimaryKey(Cost record);
 

@@ -33,4 +33,17 @@ public class BalanceController {
             return result;
         }
     }
+    @RequestMapping("/update")
+    @ResponseBody
+    public Result update(String value,String id,String field){
+        Result result = new Result();
+        try {
+            balanceService.updateById(value,id,field);
+            return result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setMessage("修改操作异常");
+            return result;
+        }
+    }
 }

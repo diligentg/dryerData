@@ -106,6 +106,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
     //监听单元格编辑
     //update
     table.on('edit(test)', function(obj){
+        console.log(obj);
         var value = obj.value //得到修改后的值
             ,d = obj.data //得到所在行所有键值
             ,field = obj.field; //得到字段

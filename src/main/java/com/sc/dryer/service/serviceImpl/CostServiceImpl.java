@@ -18,8 +18,8 @@ public class CostServiceImpl implements CostService{
     @Resource
     private CostMapper costMapper;
     @Override
-    public List<Cost> selectAll(Integer page, Integer limit) {
-        List<Cost> costs = costMapper.selectAll(page,limit);
+    public List<Cost> selectAll() {
+        List<Cost> costs = costMapper.selectAll();
         return costs;
     }
     @Override

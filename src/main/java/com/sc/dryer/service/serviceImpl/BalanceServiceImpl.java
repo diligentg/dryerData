@@ -17,4 +17,9 @@ public class BalanceServiceImpl implements BalanceService{
         List<Balance> balances = balanceMapper.selectAll();
         return balances;
     }
+
+    @Override
+    public void updateById(String value, String id, String field) {
+        balanceMapper.updateById(value,id,field);
+    }
 }
