@@ -12,6 +12,8 @@ public class Result {
     //存放我们从后台拿到的数据列表
     private List item;
 
+    private String orderString;
+
     public String getStatus() {
         return status;
     }
@@ -42,5 +44,13 @@ public class Result {
 
     public void setItem(List item) {
         this.item = item;
+    }
+
+    public String getOrderString() {
+        return orderString;
+    }
+
+    public void setOrderString(String orderString) {
+        this.orderString = orderString;
     }
 }

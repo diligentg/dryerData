@@ -9,6 +9,7 @@ public class Balance implements Serializable {
 
     private String remain;
 
+
     private static final long serialVersionUID = 1L;
 
     public String getId() {
@@ -34,4 +35,6 @@ public class Balance implements Serializable {
     public void setRemain(String remain) {
         this.remain = remain == null ? null : remain.trim();
     }
+
+
 }

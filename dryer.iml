@@ -67,5 +67,8 @@
     <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:3.0.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.attoparser:attoparser:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.unbescape:unbescape:1.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.alipay.sdk:alipay-sdk-java:3.7.4.ALL" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:javase:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:core:3.1.0" level="project" />
   </component>
 </module>

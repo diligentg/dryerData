@@ -43,6 +43,9 @@
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: com.alipay.sdk:alipay-sdk-java:3.7.4.ALL" />
+          <element id="library" level="project" name="Maven: com.google.zxing:javase:3.1.0" />
+          <element id="library" level="project" name="Maven: com.google.zxing:core:3.1.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

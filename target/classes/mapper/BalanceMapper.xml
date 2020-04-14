@@ -40,4 +40,13 @@
     where
     id=#{id}
   </update>
+  <update id="rechargeById" parameterType="string">
+    UPDATE balance
+    SET
+    <if test="field=='remain'">
+      remain=remain+#{value}
+    </if>
+    where
+    id=#{id}
+  </update>
 </mapper>
