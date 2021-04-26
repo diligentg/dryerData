@@ -161,7 +161,7 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.5</version>
+      <version>2.7</version>
     </dependency>        <!-- 是专⻔门⽤用来进⾏行行⽂文件上传下载的    该项⽬目使⽤用不不上-->
     <dependency>
       <groupId>commons-fileupload</groupId>
